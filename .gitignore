@@ -1,0 +1,8 @@
+script/
+builds/
+script/venv/
+script/__pycache__/
+script/*.pyc
+script/user_config.json
+.DS_Store
+*.DS_Store
