@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c75mpd4nm0j8t"]
 
-[ext_resource type="Script" uid="uid://dwq3813m6hbpt" path="res://scripts/Menus/settings_menu.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/Menus/settings_menu.gd" id="1_hayap"]
 
 [node name="SettingsMenu" type="Control" unique_id=2087371895]
 layout_mode = 3
@@ -9,7 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1")
+script = ExtResource("1_hayap")
 
 [node name="Backdrop" type="ColorRect" parent="." unique_id=2145758577]
 layout_mode = 1

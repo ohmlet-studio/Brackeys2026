@@ -1,33 +1,33 @@
 [gd_scene format=3 uid="uid://dompofcqtehyu"]
 
-[ext_resource type="Texture2D" uid="uid://bq1xnhtfrdebe" path="res://assets/textures/placeholders/flooplan.jpg" id="1_j5jx5"]
-[ext_resource type="Script" uid="uid://1t7dhn51sw57" path="res://scripts/activate_environment.gd" id="2_pn65j"]
-[ext_resource type="PackedScene" uid="uid://g77fwioa2yhl" path="res://scenes/Player.tscn" id="3_si7kk"]
-[ext_resource type="PackedScene" uid="uid://dwm1xoebr81f3" path="res://assets/models/Placeholders/Low Poly Furniture/Beds/Bed Double.fbx" id="4_lpvoh"]
-[ext_resource type="Script" uid="uid://cympb37pbvqnq" path="res://scripts/apply_shader_to_children.gd" id="4_n74k2"]
-[ext_resource type="PackedScene" uid="uid://bd4icnmbgdm6v" path="res://assets/models/Placeholders/Low Poly Furniture/Carpets/Carpet A.fbx" id="5_at5dv"]
-[ext_resource type="Shader" uid="uid://c06y30trocfwf" path="res://shaders/vertex_snapping.gdshader" id="5_si7kk"]
-[ext_resource type="PackedScene" uid="uid://b04lr54bw0h6v" path="res://assets/models/Placeholders/Low Poly Furniture/Chairs/Chair E.fbx" id="6_ff6ho"]
-[ext_resource type="PackedScene" uid="uid://cugmn2sdsft55" path="res://assets/models/Placeholders/Low Poly Furniture/Chairs/Chair A.fbx" id="7_7yos8"]
-[ext_resource type="PackedScene" uid="uid://7y45uptn6p45" path="res://assets/models/Placeholders/Low Poly Furniture/Chairs/Chair D.fbx" id="8_5jxlq"]
-[ext_resource type="PackedScene" uid="uid://cvyogf1rmgwux" path="res://assets/models/Placeholders/Low Poly Furniture/Doors/Door B.fbx" id="9_xrtyr"]
-[ext_resource type="PackedScene" uid="uid://d18t6hcvbpmjn" path="res://assets/models/Placeholders/Low Poly Furniture/Drawers/Drawer A.fbx" id="10_daiq8"]
-[ext_resource type="PackedScene" uid="uid://d0q3k8iiq1hjb" path="res://assets/models/Placeholders/Low Poly Furniture/Electronics/Monitor.fbx" id="11_c6rvn"]
-[ext_resource type="PackedScene" uid="uid://dn1xwipqyrsjf" path="res://assets/models/Placeholders/Low Poly Furniture/Electronics/Pc.fbx" id="12_n74k2"]
-[ext_resource type="PackedScene" uid="uid://bxv3k6wbj7361" path="res://assets/models/Placeholders/Low Poly Furniture/Lights/Lamp A.fbx" id="13_si7kk"]
-[ext_resource type="PackedScene" uid="uid://fub00bqgpqau" path="res://assets/models/Placeholders/Low Poly Furniture/Lights/Lamp C.fbx" id="14_pn65j"]
-[ext_resource type="PackedScene" uid="uid://bphqbjpqaugyp" path="res://assets/models/Placeholders/Low Poly Furniture/Lights/Lamp B.fbx" id="15_5f8cm"]
-[ext_resource type="PackedScene" uid="uid://c5blcedglahfs" path="res://assets/models/Placeholders/Low Poly Furniture/Miscellaneous/Radiator B.fbx" id="16_xrtyr"]
-[ext_resource type="PackedScene" uid="uid://b3uutcrx4ayr0" path="res://assets/models/Placeholders/Low Poly Furniture/Tables/Desk.fbx" id="17_daiq8"]
-[ext_resource type="PackedScene" uid="uid://c4p340s2kgiq8" path="res://assets/models/Placeholders/Low Poly Furniture/Windows/Window C.fbx" id="18_c6rvn"]
-[ext_resource type="PackedScene" uid="uid://crnvfun4vvka6" path="res://assets/models/Placeholders/Low Poly Furniture/Shelves/Shelf B.fbx" id="19_daiq8"]
-[ext_resource type="PackedScene" uid="uid://cbax3qbrpcgjd" path="res://assets/models/Placeholders/Low Poly Furniture/Windows/Window B.fbx" id="19_n74k2"]
+[ext_resource type="Texture2D" uid="uid://bq1xnhtfrdebe" path="res://assets/textures/placeholders/flooplan.jpg" id="1_usw5k"]
+[ext_resource type="Script" uid="uid://1t7dhn51sw57" path="res://scripts/activate_environment.gd" id="2_jsker"]
+[ext_resource type="PackedScene" uid="uid://g77fwioa2yhl" path="res://scenes/Player.tscn" id="3_6ex7q"]
+[ext_resource type="Script" uid="uid://cympb37pbvqnq" path="res://scripts/apply_shader_to_children.gd" id="4_ijfg6"]
+[ext_resource type="Shader" uid="uid://c06y30trocfwf" path="res://shaders/vertex_snapping.gdshader" id="5_ijoxy"]
+[ext_resource type="PackedScene" path="res://assets/models/Placeholders/Low Poly Furniture/Beds/Bed Double.fbx" id="6_t2wor"]
+[ext_resource type="PackedScene" path="res://assets/models/Placeholders/Low Poly Furniture/Carpets/Carpet A.fbx" id="7_l40or"]
+[ext_resource type="PackedScene" path="res://assets/models/Placeholders/Low Poly Furniture/Chairs/Chair E.fbx" id="8_hnhv5"]
+[ext_resource type="PackedScene" path="res://assets/models/Placeholders/Low Poly Furniture/Chairs/Chair A.fbx" id="9_86um8"]
+[ext_resource type="PackedScene" path="res://assets/models/Placeholders/Low Poly Furniture/Chairs/Chair D.fbx" id="10_hpass"]
+[ext_resource type="PackedScene" path="res://assets/models/Placeholders/Low Poly Furniture/Doors/Door B.fbx" id="11_srkvl"]
+[ext_resource type="PackedScene" path="res://assets/models/Placeholders/Low Poly Furniture/Drawers/Drawer A.fbx" id="12_pgakm"]
+[ext_resource type="PackedScene" path="res://assets/models/Placeholders/Low Poly Furniture/Electronics/Monitor.fbx" id="13_s7ois"]
+[ext_resource type="PackedScene" path="res://assets/models/Placeholders/Low Poly Furniture/Electronics/Pc.fbx" id="14_rw0oh"]
+[ext_resource type="PackedScene" path="res://assets/models/Placeholders/Low Poly Furniture/Lights/Lamp A.fbx" id="15_tn2kh"]
+[ext_resource type="PackedScene" path="res://assets/models/Placeholders/Low Poly Furniture/Lights/Lamp C.fbx" id="16_5p5kc"]
+[ext_resource type="PackedScene" path="res://assets/models/Placeholders/Low Poly Furniture/Lights/Lamp B.fbx" id="17_f5x1w"]
+[ext_resource type="PackedScene" path="res://assets/models/Placeholders/Low Poly Furniture/Miscellaneous/Radiator B.fbx" id="18_bfo1x"]
+[ext_resource type="PackedScene" path="res://assets/models/Placeholders/Low Poly Furniture/Tables/Desk.fbx" id="19_86oi8"]
+[ext_resource type="PackedScene" path="res://assets/models/Placeholders/Low Poly Furniture/Windows/Window C.fbx" id="20_nd5kg"]
+[ext_resource type="PackedScene" path="res://assets/models/Placeholders/Low Poly Furniture/Windows/Window B.fbx" id="21_qx1hq"]
+[ext_resource type="PackedScene" path="res://assets/models/Placeholders/Low Poly Furniture/Shelves/Shelf B.fbx" id="22_uowlq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_caja7"]
 size = Vector3(50, 0, 50)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jcd4p"]
-albedo_texture = ExtResource("1_j5jx5")
+albedo_texture = ExtResource("1_usw5k")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_6b5j0"]
 size = Vector2(7, 7)
@@ -54,7 +54,7 @@ fog_density = 0.02
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pn65j"]
 render_priority = 0
-shader = ExtResource("5_si7kk")
+shader = ExtResource("5_ijoxy")
 shader_parameter/affine_mapping = false
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/alpha_scissor = 0.5
@@ -101,63 +101,63 @@ shadow_enabled = true
 
 [node name="Environment" type="WorldEnvironment" parent="Environment" unique_id=359188081]
 environment = SubResource("Environment_4mccc")
-script = ExtResource("2_pn65j")
+script = ExtResource("2_jsker")
 
-[node name="Player" parent="." unique_id=1596461741 instance=ExtResource("3_si7kk")]
+[node name="Player" parent="." unique_id=1596461741 instance=ExtResource("3_6ex7q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="Furniture" type="Node3D" parent="." unique_id=51728901]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
-script = ExtResource("4_n74k2")
+script = ExtResource("4_ijfg6")
 material = SubResource("ShaderMaterial_pn65j")
 
-[node name="Bed Double" parent="Furniture" unique_id=391249092 instance=ExtResource("4_lpvoh")]
+[node name="Bed Double" parent="Furniture" unique_id=840873850 instance=ExtResource("6_t2wor")]
 transform = Transform3D(1.9470713e-07, 0, 0.99999976, 0, 0.99999976, 0, -0.99999976, 0, 1.9470713e-07, -3.9437299, 1.5441424, 7.439236)
 
-[node name="Carpet A" parent="Furniture" unique_id=2003015819 instance=ExtResource("5_at5dv")]
+[node name="Carpet A" parent="Furniture" unique_id=57116862 instance=ExtResource("7_l40or")]
 transform = Transform3D(0.35568956, 0, 1.457218, 0, 1.4999999, 0, -1.457218, 0, 0.35568956, -1.8505433, 0.17411497, 2.704088)
 
-[node name="Chair E" parent="Furniture" unique_id=839900882 instance=ExtResource("6_ff6ho")]
+[node name="Chair E" parent="Furniture" unique_id=181563515 instance=ExtResource("8_hnhv5")]
 transform = Transform3D(-3.496911e-08, 0, -0.79999995, 0, 0.79999995, 0, 0.79999995, 0, -3.496911e-08, -7.705287, 2.0123367, -0.7382519)
 
-[node name="Chair A" parent="Furniture" unique_id=79390672 instance=ExtResource("7_7yos8")]
+[node name="Chair A" parent="Furniture" unique_id=472167959 instance=ExtResource("9_86um8")]
 transform = Transform3D(-4.3711367e-08, 0, -0.99999976, 0, 0.99999976, 0, 0.99999976, 0, -4.3711367e-08, 10.650064, 1.9513532, 1.8793216)
 
-[node name="Chair D" parent="Furniture" unique_id=849979717 instance=ExtResource("8_5jxlq")]
+[node name="Chair D" parent="Furniture" unique_id=539828529 instance=ExtResource("10_hpass")]
 transform = Transform3D(1.2499999, 0, 0, 0, 1.2499999, 0, 0, 0, 1.2499999, 7.5803027, 1.3873894, 10.1123295)
 
-[node name="Door B" parent="Furniture" unique_id=84755802 instance=ExtResource("9_xrtyr")]
+[node name="Door B" parent="Furniture" unique_id=994248032 instance=ExtResource("11_srkvl")]
 transform = Transform3D(0.56568545, 0, -0.56568545, 0, 0.7999999, 0, 0.56568545, 0, 0.56568545, 1.7399322, 3.8741846, -7.953583)
 
-[node name="Drawer A" parent="Furniture" unique_id=1994972306 instance=ExtResource("10_daiq8")]
+[node name="Drawer A" parent="Furniture" unique_id=182370753 instance=ExtResource("12_pgakm")]
 transform = Transform3D(0.99999976, 0, 5.9211885e-15, 0, 0.99999976, 0, -5.9211885e-15, 0, 0.99999976, 7.940918, 2.155719, -3.003763)
 
-[node name="Monitor" parent="Furniture" unique_id=90349282 instance=ExtResource("11_c6rvn")]
+[node name="Monitor" parent="Furniture" unique_id=1371562383 instance=ExtResource("13_s7ois")]
 transform = Transform3D(-0.2661503, 0, 0.7544293, 0, 0.79999983, 0, -0.7544293, 0, -0.2661503, -10.473899, 4.4855437, 0.4035685)
 
-[node name="Pc" parent="Furniture" unique_id=1949966939 instance=ExtResource("12_n74k2")]
+[node name="Pc" parent="Furniture" unique_id=1382896009 instance=ExtResource("14_rw0oh")]
 transform = Transform3D(-2.6226829e-08, 0, 0.59999985, 0, 0.59999985, 0, -0.59999985, 0, -2.6226829e-08, -9.989846, 1.4304782, 0.999646)
 
-[node name="Lamp A" parent="Furniture" unique_id=815688312 instance=ExtResource("13_si7kk")]
+[node name="Lamp A" parent="Furniture" unique_id=1885763133 instance=ExtResource("15_tn2kh")]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -6.1049767, 4.8970685, -8.547621)
 
-[node name="Lamp C" parent="Furniture" unique_id=1742033607 instance=ExtResource("14_pn65j")]
+[node name="Lamp C" parent="Furniture" unique_id=588076020 instance=ExtResource("16_5p5kc")]
 transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, -10.475743, 4.6942306, -3.5166833)
 
-[node name="Lamp B" parent="Furniture" unique_id=1955105548 instance=ExtResource("15_5f8cm")]
+[node name="Lamp B" parent="Furniture" unique_id=1199386469 instance=ExtResource("17_f5x1w")]
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 4.6162915, 4.94547, 9.680994)
 
-[node name="Radiator B" parent="Furniture" unique_id=1845731733 instance=ExtResource("16_xrtyr")]
+[node name="Radiator B" parent="Furniture" unique_id=461908167 instance=ExtResource("18_bfo1x")]
 transform = Transform3D(0.99999976, 0, 2.9605942e-15, 0, 0.99999976, 0, -2.9605942e-15, 0, 0.99999976, -5.1444683, 2.249854, -11.244384)
 
-[node name="Desk" parent="Furniture" unique_id=1266782047 instance=ExtResource("17_daiq8")]
+[node name="Desk" parent="Furniture" unique_id=161167408 instance=ExtResource("19_86oi8")]
 transform = Transform3D(-3.4969105e-08, 0, 0.7999999, 0, 0.7999999, 0, -0.7999999, 0, -3.4969105e-08, -9.4295635, 2.2028742, -2.840871)
 
-[node name="Window C" parent="Furniture" unique_id=727599421 instance=ExtResource("18_c6rvn")]
+[node name="Window C" parent="Furniture" unique_id=324617973 instance=ExtResource("20_nd5kg")]
 transform = Transform3D(-0.99999976, 0, -8.742273e-08, 0, 0.99999976, 0, 8.742273e-08, 0, -0.99999976, 0.05419254, 6.4351535, 11.857753)
 
-[node name="Window B" parent="Furniture" unique_id=880910903 instance=ExtResource("19_n74k2")]
+[node name="Window B" parent="Furniture" unique_id=585697500 instance=ExtResource("21_qx1hq")]
 transform = Transform3D(-4.3711363e-08, 0, 0.99999976, 0, 0.99999976, 0, -0.99999976, 0, -4.3711363e-08, -12.0669365, 6.255399, -1.2878151)
 
-[node name="Shelf B" parent="Furniture" unique_id=528564047 instance=ExtResource("19_daiq8")]
+[node name="Shelf B" parent="Furniture" unique_id=1575788699 instance=ExtResource("22_uowlq")]
 transform = Transform3D(-3.49691e-08, 0, -0.79999983, 0, 0.79999983, 0, 0.79999983, 0, -3.49691e-08, 10.241462, 4.207643, 5.9416103)
