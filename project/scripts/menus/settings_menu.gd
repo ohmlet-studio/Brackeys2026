@@ -14,12 +14,27 @@ const MIN_LINEAR := 0.001
 @onready var backdrop: ColorRect = $Backdrop
 @onready var close_button: Button = $CenterContainer/Panel/Margin/VBox/TitleRow/CloseButton
 
+signal closed
+
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	_sync_sliders_with_buses()
 	_connect_signals()
 	backdrop.gui_input.connect(_on_backdrop_gui_input)
 	close_button.pressed.connect(_close)
-	grab_focus()
+	visibility_changed.connect(_on_visibility_changed)
+	_apply_pause_state()
+	hide()
+
+func _unhandled_input(event: InputEvent) -> void:
+	if not visible:
+		return
+
+func _on_visibility_changed() -> void:
+	_apply_pause_state()
+
+func _apply_pause_state() -> void:
+	get_tree().paused = visible
 
 func _sync_sliders_with_buses() -> void:
 	master_slider.value = _get_bus_linear(BUS_MASTER)
@@ -39,6 +54,7 @@ func _on_backdrop_gui_input(event: InputEvent) -> void:
 		accept_event()
 
 func _close() -> void:
+	closed.emit()
 	hide()
 
 func _get_bus_linear(bus_name: String) -> float:
