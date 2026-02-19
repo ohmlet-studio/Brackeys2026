@@ -49,12 +49,6 @@ transform = Transform3D(0.99999976, 0, 2.9605942e-15, 0, 0.99999976, 0, -2.96059
 [node name="Desk" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="9" unique_id=660806617 instance=ExtResource("12_qwc3n")]
 transform = Transform3D(-3.49691e-08, 0, 0.79999983, 0, 0.79999983, 0, -0.79999983, 0, -3.49691e-08, -9.429562, 2.2028737, -1.9940147)
 
-[node name="Window C" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="10" unique_id=1073027398 instance=ExtResource("13_4dapm")]
-transform = Transform3D(-0.99999976, 0, -8.742273e-08, 0, 0.99999976, 0, 8.742273e-08, 0, -0.99999976, 0.05419254, 6.4351535, 16.543053)
-
-[node name="Window B" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="11" unique_id=147437079 instance=ExtResource("14_gxi1g")]
-transform = Transform3D(-4.3711363e-08, 0, 0.99999976, 0, 0.99999976, 0, -0.99999976, 0, -4.3711363e-08, -11.565152, 6.255398, -0.4409591)
-
 [node name="Shelf B" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="12" unique_id=1956975081 instance=ExtResource("15_5micf")]
 transform = Transform3D(-3.49691e-08, 0, -0.79999983, 0, 0.79999983, 0, 0.79999983, 0, -3.49691e-08, 10.241462, 4.207643, 5.9416103)
 

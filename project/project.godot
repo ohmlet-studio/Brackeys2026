@@ -24,7 +24,7 @@ config/icon="res://icon.svg"
 
 GlobalInteractionEvents="*uid://xca2kvqtvbts"
 ScanInteractableLayer="*uid://bcseri36yyy3n"
-Manager="*uid://dw50seclqk6li"
+Manager="*res://scripts/manager/manager.gd"
 
 [display]
 
