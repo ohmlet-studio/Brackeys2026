@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://4y0tiqlqpf8s"]
 
-[ext_resource type="PackedScene" uid="uid://burwq8hhnul3n" path="res://scenes/levels/LevelBase.tscn" id="1_vjdto"]
+[ext_resource type="PackedScene" uid="uid://bsc1y6im53tww" path="res://scenes/levels/LevelBase.tscn" id="1_vjdto"]
 [ext_resource type="PackedScene" uid="uid://b04lr54bw0h6v" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair E.fbx" id="3_ljeji"]
 [ext_resource type="PackedScene" uid="uid://c40ira8kognhl" path="res://assets/models/final/bed/enfant_lit.fbx" id="3_w00vy"]
 [ext_resource type="PackedScene" uid="uid://cugmn2sdsft55" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair A.fbx" id="4_8qlrg"]
@@ -60,5 +60,5 @@ transform = Transform3D(-4.3711363e-08, 0, 0.99999976, 0, 0.99999976, 0, -0.9999
 [node name="Shelf B" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="13" unique_id=1956975081 instance=ExtResource("15_f30i7")]
 transform = Transform3D(-3.49691e-08, 0, -0.79999983, 0, 0.79999983, 0, 0.79999983, 0, -3.49691e-08, 10.241462, 4.207643, 5.9416103)
 
-[node name="Walls" parent="Room" parent_id_path=PackedInt32Array(938973325) index="1" unique_id=1303527287]
+[node name="Walls" parent="Room" parent_id_path=PackedInt32Array(938973325) index="2" unique_id=1232411267]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.004271269, -2.3841858e-07, 0.007914305)

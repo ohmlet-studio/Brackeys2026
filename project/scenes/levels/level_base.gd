@@ -1,0 +1,21 @@
+@tool
+extends Node3D
+
+@onready var _static_objects: Node3D = $Room/Interactable/Static
+@onready var _collision_shape: CollisionShape3D = $Room/room/CSGBakedMeshInstance3D/StaticBody3D/CollisionShape3D
+
+@export var hide_static_objects: bool = true:
+	set(value):
+		hide_static_objects = value
+		if is_node_ready():
+			_static_objects.visible = value
+
+@export var enable_hitbox: bool = true:
+	set(value):
+		enable_hitbox = value
+		if is_node_ready():
+			_collision_shape.disabled = !value
+
+func _ready() -> void:
+	_static_objects.visible = hide_static_objects
+	_collision_shape.disabled = !enable_hitbox

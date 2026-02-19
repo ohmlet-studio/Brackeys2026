@@ -17,7 +17,7 @@ func _ready() -> void:
 			var mesh_instance: MeshInstance3D = child
 			for i in mesh_instance.mesh.get_surface_count():
 				var og_material = mesh_instance.get_active_material(i)
-				if og_material:
+				if og_material is StandardMaterial3D:
 					var color = og_material.albedo_color
 					var texture = og_material.albedo_texture
 					var new_material = material.duplicate()
