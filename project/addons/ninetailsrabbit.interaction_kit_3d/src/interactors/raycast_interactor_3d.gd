@@ -12,7 +12,6 @@ var global_interaction_events
 
 
 func _unhandled_input(_event: InputEvent):
-	print(_event)
 	if InputMap.has_action(interact_input_action) \
 		and Input.is_action_just_pressed(interact_input_action) \
 		and current_interactable \
@@ -33,7 +32,6 @@ func _unhandled_input(_event: InputEvent):
 		and current_interactable \
 		and not interacting:
 			print("scan")
-			print(Input)
 			scan(current_interactable)
 	
 
