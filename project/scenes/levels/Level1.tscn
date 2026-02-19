@@ -1,8 +1,6 @@
 [gd_scene format=3 uid="uid://dompofcqtehyu"]
 
 [ext_resource type="Script" uid="uid://cympb37pbvqnq" path="res://scripts/apply_shader_to_children.gd" id="4_ijfg6"]
-[ext_resource type="Shader" uid="uid://c06y30trocfwf" path="res://shaders/vertex_snapping.gdshader" id="5_ijoxy"]
-[ext_resource type="PackedScene" uid="uid://dwm1xoebr81f3" path="res://assets/models/placeholders/Low Poly Furniture/Beds/Bed Double.fbx" id="6_t2wor"]
 [ext_resource type="PackedScene" uid="uid://bd4icnmbgdm6v" path="res://assets/models/placeholders/Low Poly Furniture/Carpets/Carpet A.fbx" id="7_l40or"]
 [ext_resource type="PackedScene" uid="uid://b04lr54bw0h6v" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair E.fbx" id="8_hnhv5"]
 [ext_resource type="PackedScene" uid="uid://cugmn2sdsft55" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair A.fbx" id="9_86um8"]
@@ -14,21 +12,13 @@
 [ext_resource type="PackedScene" uid="uid://fub00bqgpqau" path="res://assets/models/placeholders/Low Poly Furniture/Lights/Lamp C.fbx" id="16_5p5kc"]
 [ext_resource type="PackedScene" uid="uid://bphqbjpqaugyp" path="res://assets/models/placeholders/Low Poly Furniture/Lights/Lamp B.fbx" id="17_f5x1w"]
 [ext_resource type="PackedScene" uid="uid://c5blcedglahfs" path="res://assets/models/placeholders/Low Poly Furniture/Miscellaneous/Radiator B.fbx" id="18_bfo1x"]
+[ext_resource type="PackedScene" uid="uid://4f2pysl7d3r1" path="res://assets/models/final/bed/adulte_lit.fbx" id="18_bspq0"]
 [ext_resource type="PackedScene" uid="uid://b3uutcrx4ayr0" path="res://assets/models/placeholders/Low Poly Furniture/Tables/Desk.fbx" id="19_86oi8"]
 [ext_resource type="PackedScene" uid="uid://dwyo87xe7yyh1" path="res://scenes/levels/EmptyRoom/Walls.tscn" id="19_bspq0"]
 [ext_resource type="PackedScene" uid="uid://c4p340s2kgiq8" path="res://assets/models/placeholders/Low Poly Furniture/Windows/Window C.fbx" id="20_nd5kg"]
 [ext_resource type="Texture2D" uid="uid://cj643nuufea1c" path="res://assets/textures/misc/white_falloff.png" id="21_dqba7"]
 [ext_resource type="PackedScene" uid="uid://cbax3qbrpcgjd" path="res://assets/models/placeholders/Low Poly Furniture/Windows/Window B.fbx" id="21_qx1hq"]
 [ext_resource type="PackedScene" uid="uid://crnvfun4vvka6" path="res://assets/models/placeholders/Low Poly Furniture/Shelves/Shelf B.fbx" id="22_uowlq"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pn65j"]
-render_priority = 0
-shader = ExtResource("5_ijoxy")
-shader_parameter/affine_mapping = false
-shader_parameter/color = Color(1, 1, 1, 1)
-shader_parameter/alpha_scissor = 0.5
-shader_parameter/jitter = 0.400000019
-shader_parameter/resolution = Vector2i(320, 240)
 
 [sub_resource type="BoxMesh" id="BoxMesh_i1cfu"]
 
@@ -48,10 +38,6 @@ billboard_mode = 1
 [node name="Furniture" type="Node3D" parent="Room" unique_id=51728901]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 script = ExtResource("4_ijfg6")
-material = SubResource("ShaderMaterial_pn65j")
-
-[node name="Bed Double" parent="Room/Furniture" unique_id=1881695114 instance=ExtResource("6_t2wor")]
-transform = Transform3D(-0.99999976, 0, 1.5099573e-07, 0, 0.99999976, 0, -1.5099573e-07, 0, -0.99999976, -3.3151164, 1.5441424, 11.753979)
 
 [node name="Carpet A" parent="Room/Furniture" unique_id=57116862 instance=ExtResource("7_l40or")]
 transform = Transform3D(0.35568956, 0, 1.457218, 0, 1.4999999, 0, -1.457218, 0, 0.35568956, -1.8505433, 0.17411497, 2.704088)
@@ -97,6 +83,9 @@ transform = Transform3D(-4.3711363e-08, 0, 0.99999976, 0, 0.99999976, 0, -0.9999
 
 [node name="Shelf B" parent="Room/Furniture" unique_id=1575788699 instance=ExtResource("22_uowlq")]
 transform = Transform3D(-3.49691e-08, 0, -0.79999983, 0, 0.79999983, 0, 0.79999983, 0, -3.49691e-08, 10.241462, 4.207643, 5.9416103)
+
+[node name="adulte_lit" parent="Room/Furniture" unique_id=486545698 instance=ExtResource("18_bspq0")]
+transform = Transform3D(-3.333333, 0, -2.9140924e-07, 0, 3.333333, 0, 2.9140924e-07, 0, -3.333333, -3.2527697, 1.560633, 11.470072)
 
 [node name="Walls" parent="Room" unique_id=1303527287 instance=ExtResource("19_bspq0")]
 

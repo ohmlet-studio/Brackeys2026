@@ -51,6 +51,7 @@ shape = SubResource("BoxShape3D_611at")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 SPEED = 1.0
+HEAD_BOB_AMPLITUDE = 0.007
 
 [node name="Sun" type="DirectionalLight3D" parent="CanvasLayer/SubViewport" unique_id=1555084007]
 transform = Transform3D(0.26288852, -0.17172426, -0.9494211, 0.068173535, -0.9782676, 0.19581862, -0.9624147, -0.11620386, -0.24546827, -6.289403, 5.8933, -0.7181077)
