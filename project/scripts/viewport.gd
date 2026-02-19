@@ -40,10 +40,6 @@ func _on_game_paused():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	%SettingsMenu.show()
 
-func _unhandled_input(event):
-	if viewport and is_inside_tree():
-		viewport.push_unhandled_input(event)
-
 func _on_pause_menu_closed():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
