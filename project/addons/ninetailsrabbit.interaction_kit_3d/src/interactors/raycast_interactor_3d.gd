@@ -30,7 +30,6 @@ func _unhandled_input(_event: InputEvent):
 		and Input.is_action_just_pressed(scan_input_action) \
 		and current_interactable \
 		and not interacting:
-			print("scan")
 			scan(current_interactable)
 		
 	
@@ -86,7 +85,6 @@ func interact(interactable: Interactable3D = current_interactable):
 		interacting = interactable.lock_player_on_interact
 		
 		interactable.interacted.emit()
-		print("here")
 		
 		if global_interaction_events:
 			global_interaction_events.interactable_interacted.emit(interactable)

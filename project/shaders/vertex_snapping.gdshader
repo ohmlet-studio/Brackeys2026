@@ -9,7 +9,6 @@ render_mode blend_mix,
 uniform bool affine_mapping = false;
 uniform sampler2D albedo : source_color, filter_nearest;
 uniform vec4 color : source_color = vec4(1.0, 1.0, 1.0, 1.0);
-uniform float alpha_scissor : hint_range(0, 1) = 0.5;
 uniform float jitter : hint_range(0, 1) = 0.7;
 uniform ivec2 resolution = ivec2(320, 240);
 
@@ -42,9 +41,7 @@ void vertex()
 
 void fragment()
 {
-	vec4 color_base = COLOR;
 	vec4 texture_color = texture(albedo, UV);
-	ALBEDO = (color * color_base * texture_color).rgb;
-	ALPHA = texture_color.a * color_base.a * color.a;
-	ALPHA_SCISSOR_THRESHOLD = alpha_scissor;
+	ALBEDO = (color * COLOR * texture_color).rgb;
+	ALPHA = texture_color.a * COLOR.a * color.a;
 }

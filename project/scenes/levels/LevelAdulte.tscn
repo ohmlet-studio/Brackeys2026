@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://bg16mw2iptnrg"]
+[gd_scene format=3 uid="uid://c2hburnp68gfh"]
 
-[ext_resource type="PackedScene" uid="uid://burwq8hhnul3n" path="res://scenes/levels/LevelBase.tscn" id="1_6rgy2"]
+[ext_resource type="PackedScene" uid="uid://bsc1y6im53tww" path="res://scenes/levels/LevelBase.tscn" id="1_6rgy2"]
 [ext_resource type="PackedScene" uid="uid://b01pwdfvsow80" path="res://assets/models/final/carpet/adulte_carpet.fbx" id="2_ox3cy"]
 [ext_resource type="PackedScene" uid="uid://b04lr54bw0h6v" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair E.fbx" id="3_7sakj"]
 [ext_resource type="PackedScene" uid="uid://cugmn2sdsft55" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair A.fbx" id="4_ck67t"]
@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://drwkw7dxe6tcg" path="res://assets/models/final/bed/adulte_lit.fbx" id="16_y8cxe"]
 
 [node name="LevelAdulte" unique_id=1125609813 instance=ExtResource("1_6rgy2")]
-show_static_objects = true
 
 [node name="Furniture" parent="Room" parent_id_path=PackedInt32Array(938973325) index="0" unique_id=51728901]
 script = null
@@ -56,6 +55,9 @@ transform = Transform3D(-3.49691e-08, 0, -0.79999983, 0, 0.79999983, 0, 0.799999
 
 [node name="adulte_lit" parent="Room/Furniture" index="11" unique_id=1005375489 instance=ExtResource("16_y8cxe")]
 transform = Transform3D(-3.333333, 0, -2.9140924e-07, 0, 3.333333, 0, 2.9140924e-07, 0, -3.333333, -3.2527697, 1.560633, 11.470072)
+
+[node name="PortalBed" parent="Room/Interactable/Static/Door" parent_id_path=PackedInt32Array(322101260) index="3" unique_id=33721493]
+metadata/_edit_group_ = true
 
 [node name="TestObj" parent="Room/Interactable/Grabbable" parent_id_path=PackedInt32Array(736710538) index="0" unique_id=1972186688 instance=ExtResource("14_wx5tf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33354807, 0)

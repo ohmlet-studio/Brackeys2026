@@ -139,9 +139,13 @@ render_priority = 0
 shader = ExtResource("4_dr2ln")
 shader_parameter/affine_mapping = false
 shader_parameter/color = Color(1, 1, 1, 1)
-shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.7
 shader_parameter/resolution = Vector2i(320, 240)
+
+[sub_resource type="SphereMesh" id="SphereMesh_7sgl3"]
+flip_faces = true
+radius = 5.418
+height = 10.0
 
 [node name="LevelBase" type="Node3D" unique_id=1125609813]
 script = ExtResource("1_22e06")
@@ -181,7 +185,6 @@ teleport_interactions = 3
 teleport_collision_mask = 32768
 start_deactivated = false
 metadata/_custom_type_script = "uid://cw1r4c1d7beyv"
-metadata/_edit_group_ = true
 
 [node name="Portal3D_Mesh" type="MeshInstance3D" parent="Room/Interactable/Static/Door/PortalBed" unique_id=1591939369]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.05, 0, 0, 0)
@@ -277,3 +280,8 @@ teleporter1 = NodePath("../../Room/Interactable/Static/Door/PortalBed")
 [node name="ApplyJitterShader" type="Node" parent="." unique_id=1874859727]
 script = ExtResource("1_4cq84")
 material = SubResource("ShaderMaterial_e7klb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=486586280]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20734978, 0, 0.57653546)
+layers = 3
+mesh = SubResource("SphereMesh_7sgl3")
