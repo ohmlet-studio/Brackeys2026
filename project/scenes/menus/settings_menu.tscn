@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c75mpd4nm0j8t"]
 
-[ext_resource type="Script" path="res://scripts/Menus/settings_menu.gd" id="1_hayap"]
+[ext_resource type="Script" uid="uid://dwq3813m6hbpt" path="res://scripts/menus/settings_menu.gd" id="1_hayap"]
 
 [node name="SettingsMenu" type="Control" unique_id=2087371895]
 layout_mode = 3
