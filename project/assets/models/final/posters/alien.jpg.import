@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://odroqrlffxet"
-path.s3tc="res://.godot/imported/jeune_et_con.jpg-6aa1efa7782ad9bb63e325a5ac503fc2.s3tc.ctex"
+uid="uid://c7e1hx7mt3xjc"
+path.s3tc="res://.godot/imported/alien.jpg-bc7e728f3d3f48d702ac662f46013b31.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/final/posters/jeune_et_con.jpg"
-dest_files=["res://.godot/imported/jeune_et_con.jpg-6aa1efa7782ad9bb63e325a5ac503fc2.s3tc.ctex"]
+source_file="res://assets/models/final/posters/alien.jpg"
+dest_files=["res://.godot/imported/alien.jpg-bc7e728f3d3f48d702ac662f46013b31.s3tc.ctex"]
 
 [params]
 

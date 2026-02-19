@@ -10,7 +10,28 @@
 [ext_resource type="PackedScene" uid="uid://fv6wlm56vh0s" path="res://assets/models/final/lamp/small_lamp.fbx" id="8_dyyc4"]
 [ext_resource type="PackedScene" uid="uid://bphqbjpqaugyp" path="res://assets/models/placeholders/Low Poly Furniture/Lights/Lamp B.fbx" id="10_jy1lg"]
 [ext_resource type="PackedScene" uid="uid://c5blcedglahfs" path="res://assets/models/placeholders/Low Poly Furniture/Miscellaneous/Radiator B.fbx" id="11_h8kw8"]
+[ext_resource type="Texture2D" uid="uid://cyt7m85om0ifk" path="res://assets/models/final/posters/lapin.jpg" id="11_w00vy"]
 [ext_resource type="PackedScene" uid="uid://b3uutcrx4ayr0" path="res://assets/models/placeholders/Low Poly Furniture/Tables/Desk.fbx" id="12_0i7gq"]
+[ext_resource type="Texture2D" uid="uid://fb6h3jbticc" path="res://assets/models/final/posters/mcr.png" id="12_sfirk"]
+[ext_resource type="Texture2D" uid="uid://681dofbqicd6" path="res://assets/models/final/posters/lapin3.png" id="13_l8lak"]
+[ext_resource type="Texture2D" uid="uid://f0e5kuk16guo" path="res://assets/models/final/posters/lapin2.jpg" id="14_p0520"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glxvj"]
+albedo_texture = ExtResource("11_w00vy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wrf2l"]
+albedo_texture = ExtResource("12_sfirk")
+
+[sub_resource type="QuadMesh" id="QuadMesh_a564u"]
+material = SubResource("StandardMaterial3D_wrf2l")
+size = Vector2(0.795, 1)
+center_offset = Vector3(0, -0.01, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ey66"]
+albedo_texture = ExtResource("13_l8lak")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ybcah"]
+albedo_texture = ExtResource("14_p0520")
 
 [node name="LevelBase" unique_id=1125609813 instance=ExtResource("1_vjdto")]
 
@@ -41,5 +62,20 @@ transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 7.
 [node name="Radiator B" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="8" unique_id=1144257814 instance=ExtResource("11_h8kw8")]
 transform = Transform3D(0.99999976, 0, 2.9605942e-15, 0, 0.99999976, 0, -2.9605942e-15, 0, 0.99999976, -5.1444683, 2.249854, -11.244384)
 
-[node name="Desk" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="9" unique_id=660806617 instance=ExtResource("12_0i7gq")]
+[node name="Poster1" type="MeshInstance3D" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="9" unique_id=976204626]
+transform = Transform3D(-2.0531238e-07, 0, -4.6969995, 0, 4.6969995, 0, 4.6969995, 0, -2.0531238e-07, 11.443854, 7.1152925, -0.39146274)
+material_override = SubResource("StandardMaterial3D_glxvj")
+mesh = SubResource("QuadMesh_a564u")
+
+[node name="Poster2" type="MeshInstance3D" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="10" unique_id=1470819086]
+transform = Transform3D(2.5315156, -0.049514826, -0.00036037905, 0.04951585, 2.5314965, 0.009734366, 0.00016994594, -0.00973955, 2.5319815, 6.5890284, 6.5509906, -5.3543954)
+material_override = SubResource("StandardMaterial3D_1ey66")
+mesh = SubResource("QuadMesh_a564u")
+
+[node name="Poster3" type="MeshInstance3D" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="11" unique_id=779441032]
+transform = Transform3D(2.5315156, -0.049514826, -0.00036037905, 0.04951585, 2.5314965, 0.009734366, 0.00016994594, -0.00973955, 2.5319815, 9.351532, 7.2941422, -5.3543954)
+material_override = SubResource("StandardMaterial3D_ybcah")
+mesh = SubResource("QuadMesh_a564u")
+
+[node name="Desk" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="12" unique_id=660806617 instance=ExtResource("12_0i7gq")]
 transform = Transform3D(-3.49691e-08, 0, 0.79999983, 0, 0.79999983, 0, -0.79999983, 0, -3.49691e-08, -9.429562, 2.2028737, -1.9940147)
