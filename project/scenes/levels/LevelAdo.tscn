@@ -25,14 +25,14 @@ transform = Transform3D(-3.49691e-08, 0, -0.79999983, 0, 0.79999983, 0, 0.799999
 [node name="ado_carpet" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="1" unique_id=375641278 instance=ExtResource("3_68lt4")]
 transform = Transform3D(0.0246089, 0, -2.8198924, 0, 2.8199997, 0, 2.8198924, 0, 0.0246089, -0.2813043, 0, 10.672742)
 
-[node name="ado_lit" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="2" unique_id=1031776009 instance=ExtResource("4_7nnqp")]
-transform = Transform3D(-3.3331494, 0, -0.03490592, 0, 3.3333325, 0, 0.03490592, 0, -3.3331494, -5.2430377, 1.4398904, 11.468721)
+[node name="ado_lit" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="2" unique_id=1761978814 instance=ExtResource("4_7nnqp")]
+transform = Transform3D(-3.3331494, 0, -0.03490592, 0, 3.3333325, 0, 0.03490592, 0, -3.3331494, -5.243, 1.51, 11.469)
 
 [node name="Chair A" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="3" unique_id=1447814586 instance=ExtResource("3_7nnqp")]
 transform = Transform3D(-4.3711367e-08, 0, -0.99999976, 0, 0.99999976, 0, 0.99999976, 0, -4.3711367e-08, 10.650064, 1.9513532, 1.8793216)
 
 [node name="Chair D" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="4" unique_id=301535814 instance=ExtResource("4_rxuhs")]
-transform = Transform3D(1.2499996, 0, 0, 0, 1.2499996, 0, 0, 0, 1.2499996, 4.50673, 1.3873894, 9.550092)
+transform = Transform3D(1.2499996, 0, 0, 0, 1.2499996, 0, 0, 0, 1.2499996, 5.5811205, 1.3873894, 11.064318)
 
 [node name="Drawer A" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="5" unique_id=1948667269 instance=ExtResource("5_iemyg")]
 transform = Transform3D(0.99999976, 0, 5.9211885e-15, 0, 0.99999976, 0, -5.9211885e-15, 0, 0.99999976, 7.940918, 2.155719, -3.003763)
