@@ -12,7 +12,7 @@
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_yb3n6"]
 _surfaces = [{
-"aabb": AABB(-0.75, -1.375, -1, 1.5, 2.75, 1),
+"aabb": AABB(-0.75, -1.25, -1, 1.5, 2.5, 1),
 "attribute_data": PackedByteArray("AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AACAPwAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAIA/AACAPw=="),
 "format": 34359742487,
 "index_count": 36,
@@ -20,13 +20,13 @@ _surfaces = [{
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 8,
-"vertex_data": PackedByteArray("AABAvwAAsD8AAAAAAABAPwAAsD8AAAAAAABAvwAAsL8AAAAAAABAPwAAsL8AAAAAAABAvwAAsD8AAIC/AABAPwAAsD8AAIC/AABAvwAAsL8AAIC/AABAPwAAsL8AAIC//3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgA==")
+"vertex_data": PackedByteArray("AABAvwAAoD8AAAAAAABAPwAAoD8AAAAAAABAvwAAoL8AAAAAAABAPwAAoL8AAAAAAABAvwAAoD8AAIC/AABAPwAAoD8AAIC/AABAvwAAoL8AAIC/AABAPwAAoL8AAIC//3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgA==")
 }]
 script = ExtResource("8_d8oet")
-size = Vector3(1.5, 2.75, 1)
+size = Vector3(1.5, 2.5, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7sgl3"]
-size = Vector3(1.5, 2.75, 1)
+size = Vector3(1.5, 2.5, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_56yhv"]
 resource_name = "Walls"
