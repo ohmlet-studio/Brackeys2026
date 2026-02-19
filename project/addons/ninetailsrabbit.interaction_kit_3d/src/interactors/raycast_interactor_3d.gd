@@ -12,13 +12,13 @@ var global_interaction_events
 
 
 func _unhandled_input(_event: InputEvent):
-
+	print(_event)
 	if InputMap.has_action(interact_input_action) \
 		and Input.is_action_just_pressed(interact_input_action) \
 		and current_interactable \
 		and not interacting:
 			
-		interact(current_interactable)
+			interact(current_interactable)
 		
 	
 	if InputMap.has_action(cancel_interact_input_action) \
@@ -32,10 +32,10 @@ func _unhandled_input(_event: InputEvent):
 		and Input.is_action_just_pressed(scan_input_action) \
 		and current_interactable \
 		and not interacting:
-			
+			print("scan")
+			print(Input)
 			scan(current_interactable)
-			
-		
+	
 
 func _enter_tree():
 	enabled = true
@@ -89,6 +89,7 @@ func interact(interactable: Interactable3D = current_interactable):
 		interacting = interactable.lock_player_on_interact
 		
 		interactable.interacted.emit()
+		print("here")
 		
 		if global_interaction_events:
 			global_interaction_events.interactable_interacted.emit(interactable)
