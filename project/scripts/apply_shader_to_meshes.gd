@@ -9,9 +9,11 @@ func get_all_children(in_node,arr:=[]):
 	return arr
 
 func _ready() -> void:
-	var children = get_all_children(get_tree().root)
-	for child in children:
+	for child in get_all_children(get_tree().root):
 		if child is MeshInstance3D:
+			if child.get_layer_mask_value(3):
+				return
+			
 			var mesh_instance: MeshInstance3D = child
 			for i in mesh_instance.mesh.get_surface_count():
 				var og_material = mesh_instance.get_active_material(i)

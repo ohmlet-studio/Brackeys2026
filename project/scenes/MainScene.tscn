@@ -49,7 +49,7 @@ shape = SubResource("BoxShape3D_611at")
 
 [node name="Player" parent="CanvasLayer/SubViewport" unique_id=1596461741 instance=ExtResource("3_1wiy7")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1589148, 0)
 SPEED = 1.0
 
 [node name="Sun" type="DirectionalLight3D" parent="CanvasLayer/SubViewport" unique_id=1555084007]
@@ -66,6 +66,7 @@ size = Vector2i(600, 339)
 
 [node name="ColorMaskCamera3D" type="Camera3D" parent="CanvasLayer/MaskViewport" unique_id=1126684017]
 unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0717633, 0)
 cull_mask = 2
 environment = ExtResource("5_1wiy7")
 

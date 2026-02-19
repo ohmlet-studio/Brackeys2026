@@ -70,6 +70,12 @@ interact={
 ]
 }
 
+[layer_names]
+
+3d_render/layer_1="Visible"
+3d_render/layer_2="ColoredMask"
+3d_render/layer_3="NotJitterShader"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
@@ -77,3 +83,8 @@ interact={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+lights_and_shadows/directional_shadow/soft_shadow_filter_quality=4
+lights_and_shadows/positional_shadow/soft_shadow_filter_quality=4
+lights_and_shadows/layer_3="NotColoredMask"
+lights_and_shadows/layer_2="ColoredMask"
+lights_and_shadows/layer_1="Visible"
