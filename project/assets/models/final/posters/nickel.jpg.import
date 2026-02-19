@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://odroqrlffxet"
-path.s3tc="res://.godot/imported/jeune_et_con.jpg-6aa1efa7782ad9bb63e325a5ac503fc2.s3tc.ctex"
+uid="uid://coy6humie5h15"
+path.s3tc="res://.godot/imported/nickel.jpg-f44c3cd3db84431a14f941602626a556.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/final/posters/jeune_et_con.jpg"
-dest_files=["res://.godot/imported/jeune_et_con.jpg-6aa1efa7782ad9bb63e325a5ac503fc2.s3tc.ctex"]
+source_file="res://assets/models/final/posters/nickel.jpg"
+dest_files=["res://.godot/imported/nickel.jpg-f44c3cd3db84431a14f941602626a556.s3tc.ctex"]
 
 [params]
 
