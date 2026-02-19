@@ -1,9 +1,20 @@
-[gd_scene format=3 uid="uid://burwq8hhnul3n"]
+[gd_scene format=3 uid="uid://bsc1y6im53tww"]
 
-[ext_resource type="Script" uid="uid://cympb37pbvqnq" path="res://scripts/apply_shader_to_children.gd" id="1_4cq84"]
+[ext_resource type="Script" uid="uid://cympb37pbvqnq" path="res://scripts/apply_shader_to_meshes.gd" id="1_4cq84"]
+[ext_resource type="PackedScene" uid="uid://c4p340s2kgiq8" path="res://assets/models/placeholders/Low Poly Furniture/Windows/Window C.fbx" id="2_e7klb"]
+[ext_resource type="PackedScene" uid="uid://cbax3qbrpcgjd" path="res://assets/models/placeholders/Low Poly Furniture/Windows/Window B.fbx" id="3_wyida"]
+[ext_resource type="Shader" uid="uid://c06y30trocfwf" path="res://shaders/vertex_snapping.gdshader" id="4_dr2ln"]
 [ext_resource type="PackedScene" uid="uid://dwyo87xe7yyh1" path="res://scenes/levels/EmptyRoom/Walls.tscn" id="17_7aof2"]
-[ext_resource type="Script" uid="uid://bee122ap2e1m1" path="res://scenes/levels/EmptyRoom/show_on_ready.gd" id="18_q11wm"]
 [ext_resource type="PackedScene" uid="uid://byac8f8k1u372" path="res://assets/models/final/static/door.tscn" id="19_jxjyj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e7klb"]
+render_priority = 0
+shader = ExtResource("4_dr2ln")
+shader_parameter/affine_mapping = false
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.7
+shader_parameter/resolution = Vector2i(320, 240)
 
 [node name="LevelBase" type="Node3D" unique_id=1125609813]
 
@@ -13,16 +24,28 @@
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 script = ExtResource("1_4cq84")
 
-[node name="Walls" parent="Room" unique_id=1303527287 instance=ExtResource("17_7aof2")]
-script = ExtResource("18_q11wm")
+[node name="Window C" parent="Room/Furniture" unique_id=1567670714 instance=ExtResource("2_e7klb")]
+transform = Transform3D(-0.99999976, 0, -8.742273e-08, 0, 0.99999976, 0, 8.742273e-08, 0, -0.99999976, 0.05419254, 6.4351535, 16.543053)
+
+[node name="Window B" parent="Room/Furniture" unique_id=1329570843 instance=ExtResource("3_wyida")]
+transform = Transform3D(-4.3711363e-08, 0, 0.99999976, 0, 0.99999976, 0, -0.99999976, 0, -4.3711363e-08, -11.565152, 6.255398, -0.4409591)
 
 [node name="Interactable" type="Node3D" parent="Room" unique_id=1217517487]
 
 [node name="Static" type="Node3D" parent="Room/Interactable" unique_id=1037730109]
 
 [node name="Door" parent="Room/Interactable/Static" unique_id=322101260 instance=ExtResource("19_jxjyj")]
-transform = Transform3D(0.17677669, 0, -0.17677669, 0, 0.25, 0, 0.17677669, 0, 0.17677669, 0.98670065, 0, -1.918923)
+transform = Transform3D(0.18384776, 0, -0.18384776, 0, 0.26, 0, 0.18384776, 0, 0.18384776, 1.0053809, 0, -1.917307)
+
+[node name="Door2" parent="Room/Interactable/Static" unique_id=1862783856 instance=ExtResource("19_jxjyj")]
+transform = Transform3D(-0.26, 0, -2.2729921e-08, 0, 0.26, 0, 2.2729921e-08, 0, -0.26, 1.0724248, -0.0075794645, 5.049637)
 
 [node name="Grabbable" type="Node3D" parent="Room/Interactable" unique_id=736710538]
 
+[node name="Walls" parent="Room" unique_id=1232411267 instance=ExtResource("17_7aof2")]
+
 [node name="Environment" type="Node3D" parent="." unique_id=1343892450]
+
+[node name="ApplyJitterShader" type="Node" parent="." unique_id=1874859727]
+script = ExtResource("1_4cq84")
+material = SubResource("ShaderMaterial_e7klb")
