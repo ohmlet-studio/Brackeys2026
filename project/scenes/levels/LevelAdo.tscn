@@ -128,7 +128,7 @@ transform = Transform3D(-0.3908574, 0, -3.1961892, 0, 3.2199988, 0, 3.1961892, 0
 [node name="commode2" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="1" unique_id=653389449 instance=ExtResource("4_iemyg")]
 transform = Transform3D(1.2549975, 0, 0.0021903862, 0, 1.2549992, 0, -0.0021903862, 0, 1.2549975, 7.7616954, 2.1547332, -3.0627859)
 
-[node name="cactus" parent="Room/Furniture/commode2" index="9" unique_id=857450535 instance=ExtResource("4_4dus4")]
+[node name="cactus" parent="Room/Furniture/commode2" index="8" unique_id=857450535 instance=ExtResource("4_4dus4")]
 transform = Transform3D(0.815, 0, -3.4924597e-10, 0, 0.81499994, 0, 3.4924597e-10, 0, 0.815, 2.122151, 1.8393813, -0.86599946)
 
 [node name="commode" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="2" unique_id=1052609487 instance=ExtResource("4_68lt4")]
@@ -284,5 +284,11 @@ transform = Transform3D(-1.3731929e-07, 2.5450623e-08, -3.1949997, 0.5822424, 3.
 material_override = SubResource("StandardMaterial3D_u65tb")
 mesh = SubResource("QuadMesh_3owl0")
 
-[node name="room" parent="." index="3" unique_id=1486009596]
+[node name="room" parent="." index="3" unique_id=952250540]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0010465384, 1.1920929e-07, 0.77542)
+
+[node name="Room" parent="room" index="0" unique_id=958283466]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+surface_material_override/3 = null
