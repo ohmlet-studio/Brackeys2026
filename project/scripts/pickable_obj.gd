@@ -10,6 +10,7 @@ var picked: bool = false
 @onready var handObjView = $inHandUI
 @onready var subviewport: SubViewport = $inHandUI/SubViewport
 @onready var interactable_3d: Interactable3D = $Interactable3D
+@onready var color_sphere = $ColorSphere
 
 @export var object_name: String = "":
 	set(value):
@@ -40,6 +41,13 @@ var picked: bool = false
 			clone_inspect_view.rotation = value
 
 @export var has_been_scanned: bool = false
+
+# TODO play clip here
+
+# TODO color thingy
+@export var scale_scanned: float = 3.0 
+
+# TODO ???
 
 func _ready() -> void:
 	_set_object_name(object_name)
@@ -116,6 +124,32 @@ func _show_hand_obj(pick: bool) -> void:
 		handObjView.show()
 	else:
 		handObjView.hide()
+		
+var _breath_time: float = 0.0
+var _tween_done: bool = false
+var _scan_tween: Tween
+
+func on_scanned() -> void:
+	has_been_scanned = true
+	_tween_done = false
+	
+	if _scan_tween:
+		_scan_tween.kill()
+	
+	_scan_tween = create_tween()
+	_scan_tween.tween_property(color_sphere, "scale", Vector3.ONE * scale_scanned, 4.0)
+	_scan_tween.tween_callback(func(): _tween_done = true)
 
 func _process(delta: float) -> void:
-	pass
+	_breath_time += delta
+	var breath = sin(_breath_time * 2.0) * 0.05
+
+	if has_been_scanned and not _tween_done:
+		return  # let the tween play out
+		
+	var dist = Manager.globPlayer.global_position.distance_to(self.global_position)
+	var max_distance = 1.5
+	var min_scale = 0.1
+	
+	var scale_value = clamp(dist / max_distance, min_scale, 1.0) if not has_been_scanned else scale_scanned
+	color_sphere.scale = Vector3.ONE * (scale_value + breath)

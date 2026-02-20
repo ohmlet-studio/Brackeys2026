@@ -14,9 +14,13 @@ background_color = Color(0, 0, 0, 0)
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
 
+[sub_resource type="SphereMesh" id="SphereMesh_s5pbp"]
+flip_faces = true
+
 [node name="Pickable" type="Node3D" unique_id=1972186688]
 script = ExtResource("1_s5pbp")
 default_inspect_rotation = null
+scale_scanned = null
 
 [node name="Interactable3D" type="Area3D" parent="." unique_id=1609274884]
 script = ExtResource("2_8kydj")
@@ -59,3 +63,7 @@ transparent_bg = true
 [node name="Camera3D" type="Camera3D" parent="inHandUI/SubViewport" unique_id=1115116186]
 transform = Transform3D(0.006513669, -0.1128796, 0.9935874, 0.021458438, 0.9933954, 0.11271712, -0.9997486, 0.020586628, 0.008892869, 0.7675929, 0.6601874, 0.4117597)
 environment = SubResource("Environment_8kydj")
+
+[node name="ColorSphere" type="MeshInstance3D" parent="." unique_id=375854603]
+layers = 2
+mesh = SubResource("SphereMesh_s5pbp")

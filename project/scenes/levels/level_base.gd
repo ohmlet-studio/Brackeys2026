@@ -2,8 +2,7 @@
 extends Node3D
 
 @onready var _static_objects: Node3D = $Room/Interactable/Static
-@onready var _collision_shape: CollisionShape3D = $Room/room/CSGBakedMeshInstance3D/StaticBody3D/CollisionShape3D
-
+@onready var _collision_shape: CollisionShape3D = %CollisionShape3D
 @export var show_static_objects: bool = true:
 	set(value):
 		show_static_objects = value

@@ -1,4 +1,5 @@
 extends Node
+class_name Pickable
 
 @onready var viewport = $CanvasLayer/SubViewport
 @onready var interactable_information: RichTextLabel = %InterInfo
@@ -49,10 +50,12 @@ func _on_pause_menu_closed():
 func _on_interactable_focused(interactable: Interactable3D) -> void:
 	if not is_scanning:
 		dot_cursor.focused = true
-		if not interactable.get_parent().has_been_scanned:
-			interactable_information.text = "[font_size=35][i][E] to scan %s[/i][/font_size]" % interactable.title
-		elif interactable.get_parent().has_been_scanned and Manager.is_all_picked:
-			interactable_information.text = "[font_size=35][i][E] to pick %s[/i][/font_size]" % interactable.title
+		
+		if interactable.get_parent() is Pickable:
+			if interactable.get_parent().has_been_scanned:
+				interactable_information.text = "[font_size=35][i][E] to scan %s[/i][/font_size]" % interactable.title
+			elif interactable.get_parent().has_been_scanned and Manager.is_all_picked:
+				interactable_information.text = "[font_size=35][i][E] to pick %s[/i][/font_size]" % interactable.title
 
 func _on_interactable_unfocused(_interactable: Interactable3D) -> void:
 	dot_cursor.focused = false
