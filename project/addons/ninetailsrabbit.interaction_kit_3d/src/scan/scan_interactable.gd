@@ -18,9 +18,9 @@ var current_object: Node3D:
 			set_process_unhandled_input(current_object != null)
 
 
-func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed(&"interact") and is_cur_scan :
-		end_scan()
+#func _unhandled_input(event: InputEvent) -> void:
+	#if Input.is_action_just_pressed(&"interact") and is_cur_scan :
+		#end_scan()
 
 func _ready() -> void:
 	set_process_unhandled_input(current_object != null)

@@ -44,6 +44,14 @@ var picked: bool = false
 
 @export var color_radius: float = 1.0
 
+@export var dialog_audio: AudioStream:
+	set(value):
+		dialog_audio = value
+
+@export var dialog_subtitle: String :
+	set(value):
+		dialog_subtitle = value
+
 var _base_radius: float = 0.0
 var _breath_time: float = 0.0
 var _scan_tween: Tween
@@ -111,10 +119,14 @@ func _set_object_to_scan(value: PackedScene) -> void:
 	interactable_3d.target_scannable_object = clone_inspect_view
 
 func _on_interact() -> void:
-	if has_been_scanned and Manager.is_all_picked:
+	if has_been_scanned and Manager.is_all_scanned:
 		picked = not picked
 		_origin_obj_transparency(picked)
 		_show_hand_obj(picked)
+	if picked:
+		if not Manager.is_one_picked:
+			Manager.is_one_picked = true
+		Manager.pick_obj_name = object_name
 
 func _origin_obj_transparency(pick: bool) -> void:
 	var mesh = scanned_object_instance.get_child(0)
@@ -145,6 +157,8 @@ func _on_scan_started() -> void:
 			color_radius, _base_radius * 20.0, 2.0
 	).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
 
+	SubtitlesScene.sub_load_from_file(dialog_subtitle)
+	SubtitlesScene.play_dialog(dialog_audio)
 
 func _on_scan_ended(scanned_object: Node3D) -> void:
 	if scanned_object and scanned_object.get_meta("scan_owner", null) == self:
@@ -155,6 +169,7 @@ func _on_scan_ended(scanned_object: Node3D) -> void:
 			func(v): color_radius = v,
 			_base_radius * 20.0, 0.0, 1.0
 		).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
+	
 
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
@@ -168,3 +183,8 @@ func _process(delta: float) -> void:
 
 	color_sphere.scale = Vector3.ONE * (color_radius * proximity_factor * breath)
 	
+	## Check if another object is picked and if it is self
+	if Manager.is_one_picked and not Manager.pick_obj_name.is_empty():
+		## double check picked in case, just to make sure there's no knots in code
+		if picked and Manager.pick_obj_name != object_name:
+			_on_interact()
