@@ -71,7 +71,7 @@ transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 3.
 transform = Transform3D(0.99999976, 0, 2.9605942e-15, 0, 0.99999976, 0, -2.9605942e-15, 0, 0.99999976, -5.1444683, 2.249854, -11.244384)
 
 [node name="Poster1" type="MeshInstance3D" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="9" unique_id=976204626]
-transform = Transform3D(-2.0531238e-07, 0, -4.6969995, 0, 4.6969995, 0, 4.6969995, 0, -2.0531238e-07, 11.443854, 7.1152925, -0.39146274)
+transform = Transform3D(-2.0531238e-07, 0, -4.6969995, 0, 4.6969995, 0, 4.6969995, 0, -2.0531238e-07, 11.443854, 5.8476796, 0.36819118)
 material_override = SubResource("StandardMaterial3D_glxvj")
 mesh = SubResource("QuadMesh_a564u")
 
@@ -86,7 +86,7 @@ material_override = SubResource("StandardMaterial3D_l8lak")
 mesh = SubResource("QuadMesh_a564u")
 
 [node name="Art2" type="MeshInstance3D" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="12" unique_id=1269683074]
-transform = Transform3D(0.03414978, -0.0031269097, 1.6363525, 0.023555113, 0.7768521, 0.005714197, -1.2262985, 0.014834932, 0.04567867, -8.10562, 2.7312603, 13.487982)
+transform = Transform3D(0.03414978, -0.0031269097, 1.6363525, 0.023555113, 0.7768521, 0.005714197, -1.2262985, 0.014834932, 0.04567867, -8.105619, 2.6035495, 13.579301)
 material_override = SubResource("StandardMaterial3D_p0520")
 mesh = SubResource("QuadMesh_a564u")
 
@@ -97,9 +97,6 @@ mesh = SubResource("QuadMesh_a564u")
 
 [node name="Desk" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="14" unique_id=660806617 instance=ExtResource("12_0i7gq")]
 transform = Transform3D(-3.49691e-08, 0, 0.79999983, 0, 0.79999983, 0, -0.79999983, 0, -3.49691e-08, -9.429562, 2.2028737, -1.9940147)
-
-[node name="PortalBed" parent="Room/Interactable/Static/Door" parent_id_path=PackedInt32Array(322101260) index="3" unique_id=33721493]
-metadata/_edit_group_ = true
 
 [node name="CSGBakedMeshInstance3D" parent="Room/room" parent_id_path=PackedInt32Array(1525725687) index="0" unique_id=484489248]
 transform = Transform3D(100, 0, 0, 0, -4.371139e-06, 100, 0, -100, -4.371139e-06, 0, 0, 0)
