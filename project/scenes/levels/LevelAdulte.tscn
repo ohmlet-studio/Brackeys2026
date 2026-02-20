@@ -71,6 +71,7 @@ default_inspect_rotation = Vector3(90, 0, 0)
 transform = Transform3D(0.15692325, -0.38699013, -0.908633, 0.98406774, -0.016593222, 0.17701815, -0.08358139, -0.92193466, 0.3782206, 1.715733, 1.1790702, -1.0509461)
 object_name = "trumpet"
 object_to_scan = ExtResource("16_6rgy2")
+scale_2d_view = 2.0
 inspect_scale = 2.0
 default_inspect_rotation = Vector3(0, 90, 0)
 
@@ -81,6 +82,3 @@ object_to_scan = ExtResource("17_ox3cy")
 scale_2d_view = 7.0
 inspect_scale = 7.0
 default_inspect_rotation = Vector3(0, 90, 0)
-
-[node name="MeshInstance3D" parent="." index="4" unique_id=486586280]
-visible = true
