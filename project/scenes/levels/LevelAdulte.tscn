@@ -81,6 +81,3 @@ object_to_scan = ExtResource("17_ox3cy")
 scale_2d_view = 7.0
 inspect_scale = 7.0
 default_inspect_rotation = Vector3(0, 90, 0)
-
-[node name="MeshInstance3D" parent="." index="4" unique_id=486586280]
-visible = true
