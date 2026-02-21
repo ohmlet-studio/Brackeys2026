@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://csg5ojcly8of"]
+
+[ext_resource type="Script" uid="uid://ghrtttggnl0t" path="res://scripts/final_scene.gd" id="1_rq84w"]
+
+[sub_resource type="Environment" id="Environment_i4xxx"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_77ye6"]
+
+[node name="FinalScene" type="Control" unique_id=86593980]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rq84w")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=809016304]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=946011789]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1779409992]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.0717905)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=2102030353]
+transform = Transform3D(-0.36669192, -0.54573643, 0.7534646, -0.23881549, 0.8379569, 0.49070913, -0.89916867, 6.628799e-08, -0.43760234, 1.6350305, 1.6664399, -2.6178732)
+shadow_enabled = true
+
+[node name="Environment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport" unique_id=1835907796]
+environment = SubResource("Environment_i4xxx")
+
+[node name="Node3D" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1842307672]
+
+[node name="Object1" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Node3D" unique_id=1550295145]
+transform = Transform3D(1, 0, 0, 0, 0.41038454, -0.9119126, 0, 0.9119126, 0.41038454, 0.07144785, 0, -6.960758)
+mesh = SubResource("CylinderMesh_77ye6")
+
+[node name="Object2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Node3D" unique_id=1185815596]
+transform = Transform3D(1, 0, 0, 0, -0.63751805, 0.7704355, 0, -0.7704355, -0.63751805, -3.9269135, 0, -5.700931)
+mesh = SubResource("CylinderMesh_77ye6")
+
+[node name="Object3" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Node3D" unique_id=715598589]
+transform = Transform3D(1, 0, 0, 0, 0.41038454, -0.9119126, 0, 0.9119126, 0.41038454, -2.2993915, 0, -6.960758)
+visible = false
+mesh = SubResource("CylinderMesh_77ye6")
