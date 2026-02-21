@@ -1,16 +1,21 @@
 @tool
 extends Node
+class_name Pickable
+
+signal scan_ended
 
 var object_material : Material
 var clone_2d_view: Node3D
 var clone_inspect_view: Node3D
 var scanned_object_instance: Node3D # never scale this, scale in blender and apply transform
 var picked: bool = false
+var scanned: bool 
 
 @onready var handObjView = $inHandUI
 @onready var subviewport: SubViewport = $inHandUI/SubViewport
 @onready var interactable_3d: Interactable3D = $Interactable3D
 @onready var color_sphere = $ColorSphere
+@onready var pickable_parent = self.get_parent()
 
 @export var object_name: String = "":
 	set(value):
@@ -54,7 +59,7 @@ var picked: bool = false
 
 var _base_radius: float = 0.0
 var _breath_time: float = 0.0
-var _scan_tween: Tween
+var scan_tween: Tween
 var _interact_tween: Tween
 
 func _ready() -> void:
@@ -119,7 +124,7 @@ func _set_object_to_scan(value: PackedScene) -> void:
 	interactable_3d.target_scannable_object = clone_inspect_view
 
 func _on_interact() -> void:
-	if has_been_scanned and Manager.is_all_scanned:
+	if has_been_scanned and Manager.current_room.all_room_object_scanned():
 		picked = not picked
 		_origin_obj_transparency(picked)
 		_show_hand_obj(picked)
@@ -151,16 +156,15 @@ func _show_hand_obj(pick: bool) -> void:
 		handObjView.hide()
 
 func _on_scan_started() -> void:
-	Manager.object_picked.emit()
-	
+	scanned = true
 	has_been_scanned = true
 	
-	if _scan_tween:
-		_scan_tween.kill()
+	if scan_tween:
+		scan_tween.kill()
 	
-	_scan_tween = create_tween()
+	scan_tween = create_tween()
 
-	_scan_tween.tween_method(
+	scan_tween.tween_method(
 		func(v):
 			color_radius = v,
 			color_radius, _base_radius * 20.0, 2.0
@@ -171,13 +175,15 @@ func _on_scan_started() -> void:
 
 func _on_scan_ended(scanned_object: Node3D) -> void:
 	if scanned_object and scanned_object.get_meta("scan_owner", null) == self:
-		if _scan_tween:
-			_scan_tween.kill()
-		_scan_tween = create_tween()
-		_scan_tween.tween_method(
+		if scan_tween:
+			scan_tween.kill()
+		scan_tween = create_tween()
+		scan_tween.tween_method(
 			func(v): color_radius = v,
 			_base_radius * 20.0, 0.0, 1.0
 		).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
+	
+	scan_ended.emit()
 	
 
 func _process(delta: float) -> void:

@@ -18,6 +18,7 @@ class_name LevelRoom
 
 @onready var portal_door_1: PortalDoor = $Room/Interactable/Static/PortalDoorMain
 @onready var portal_door_2: PortalDoor = $Room/Interactable/Static/PortalDoorBed
+@onready var pickable_parent = $Room/Interactable/Grabbable
 
 func _ready() -> void:
 	_static_objects.visible = show_static_objects
@@ -28,6 +29,14 @@ func _ready() -> void:
 	
 	_create_furniture_collisions()
 	_link_portals(next_room)
+	for child: Pickable in pickable_parent.get_children():
+		child.scan_ended.connect(_on_scan_ended.bind(child))
+
+func all_room_object_scanned():
+	for child: Pickable in pickable_parent.get_children():
+		if not child.scanned:
+			return false
+	return true
 
 func _link_portals(other_room: LevelRoom):
 	await get_tree().process_frame
@@ -65,3 +74,13 @@ func _collect_meshes(node: Node, result: Array[MeshInstance3D]) -> void:
 		result.append(node)
 	for child in node.get_children():
 		_collect_meshes(child, result)
+
+func _on_scan_ended(pickable: Pickable):
+	if pickable.scan_tween:
+		await pickable.scan_tween.finished
+		
+	if all_room_object_scanned():
+		_bring_color_back()
+
+func _bring_color_back():
+	$AnimationPlayer.play("bring_color")

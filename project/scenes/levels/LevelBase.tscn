@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ce7kds7l22ohd" path="res://assets/models/final/room.fbm/plaster.jpg" id="7_yb3n6"]
 [ext_resource type="Texture2D" uid="uid://qec580l8t1r8" path="res://assets/models/final/room.fbm/parket.jpg" id="8_7sgl3"]
 [ext_resource type="Texture2D" uid="uid://bp6q74of32gcm" path="res://assets/models/final/room.fbm/vintagepapierpeint.png" id="9_d8oet"]
+[ext_resource type="Texture2D" uid="uid://cj643nuufea1c" path="res://assets/textures/misc/white_falloff.png" id="10_7sgl3"]
 [ext_resource type="PackedScene" uid="uid://byac8f8k1u372" path="res://assets/models/final/static/PortalDoor.tscn" id="19_jxjyj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e7klb"]
@@ -170,6 +171,132 @@ uv1_scale = Vector3(7, 7, 7)
 albedo_texture = ExtResource("7_yb3n6")
 uv1_scale = Vector3(10, 10, 10)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mitw8"]
+shading_mode = 0
+
+[sub_resource type="SphereMesh" id="SphereMesh_d8oet"]
+flip_faces = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8gcb1"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("10_7sgl3")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_mitw8"]
+material = SubResource("StandardMaterial3D_8gcb1")
+size = Vector2(3, 3)
+
+[sub_resource type="Animation" id="Animation_q1fvm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LightBringer:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.1, 0.1, 0.1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LightBringer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LightBringer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("room/Room:layers")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_7es1f"]
+resource_name = "bring_color"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LightBringer:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.35, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.4, 0.4, 0.4), Vector3(0.4, 0.4, 0.4), Vector3(12, 12, 12)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LightBringer:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.3666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -3, 0), Vector3(0, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LightBringer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("room/Room:layers")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_28yxk"]
+_data = {
+&"RESET": SubResource("Animation_q1fvm"),
+&"bring_color": SubResource("Animation_7es1f")
+}
+
 [node name="LevelBase" type="Node3D" unique_id=1125609813]
 script = ExtResource("1_22e06")
 
@@ -215,3 +342,20 @@ surface_material_override/0 = SubResource("StandardMaterial3D_yb3n6")
 surface_material_override/1 = SubResource("StandardMaterial3D_7sgl3")
 surface_material_override/2 = SubResource("StandardMaterial3D_d8oet")
 surface_material_override/3 = SubResource("StandardMaterial3D_ivuo3")
+
+[node name="LightBringer" type="Node3D" parent="." unique_id=1954431370]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 1, 0)
+visible = false
+
+[node name="ColoredSphere" type="MeshInstance3D" parent="LightBringer" unique_id=576498797]
+layers = 2
+material_override = SubResource("StandardMaterial3D_mitw8")
+cast_shadow = 0
+mesh = SubResource("SphereMesh_d8oet")
+
+[node name="Billboard" type="MeshInstance3D" parent="LightBringer" unique_id=1114336858]
+layers = 2
+mesh = SubResource("QuadMesh_mitw8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=600025260]
+libraries/ = SubResource("AnimationLibrary_28yxk")

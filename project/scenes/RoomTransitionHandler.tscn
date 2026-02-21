@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://c0thskp5m6kuc"]
 
+[ext_resource type="Script" uid="uid://cd3wxqq2iks3x" path="res://scenes/room_transition_handler.gd" id="1_h6gdu"]
 [ext_resource type="PackedScene" uid="uid://btfc2xv0asp01" path="res://scenes/levels/LevelAdo.tscn" id="1_wks6e"]
 [ext_resource type="PackedScene" uid="uid://4y0tiqlqpf8s" path="res://scenes/levels/LevelEnfant.tscn" id="2_ilqm7"]
-[ext_resource type="PackedScene" path="res://scenes/levels/LevelSpecial.tscn" id="3_ehv8f"]
+[ext_resource type="PackedScene" uid="uid://c1slrw45k6y3h" path="res://scenes/levels/LevelSpecial.tscn" id="3_ehv8f"]
 [ext_resource type="PackedScene" uid="uid://g77fwioa2yhl" path="res://scenes/Player.tscn" id="3_t0nsw"]
 [ext_resource type="PackedScene" uid="uid://c2hburnp68gfh" path="res://scenes/levels/LevelAdulte.tscn" id="4_ehv8f"]
 [ext_resource type="Script" uid="uid://1t7dhn51sw57" path="res://scripts/activate_environment.gd" id="5_h6gdu"]
@@ -25,6 +26,7 @@ fog_light_color = Color(1, 1, 1, 1)
 fog_light_energy = 0.25
 
 [node name="RoomTransitionHandler" type="Node3D" unique_id=724203233]
+script = ExtResource("1_h6gdu")
 
 [node name="Rooms" type="Node3D" parent="." unique_id=1259779974]
 
