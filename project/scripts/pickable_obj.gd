@@ -192,12 +192,13 @@ func _process(delta: float) -> void:
 		
 	_breath_time += delta
 
-	var dist = Manager.globPlayer.global_position.distance_to(self.global_position)
-	var proximity_factor = clamp(dist / 1.5, 0.0, 1.0) if not has_been_scanned else 1.0
-	var breath = sin(_breath_time * 2.0) * 0.1 + 0.9
+	if Manager.globPlayer:
+		var dist = Manager.globPlayer.global_position.distance_to(self.global_position)
+		var proximity_factor = clamp(dist / 1.5, 0.0, 1.0) if not has_been_scanned else 1.0
+		var breath = sin(_breath_time * 2.0) * 0.1 + 0.9
 
-	color_sphere.scale = Vector3.ONE * (color_radius * proximity_factor * breath)
-	
+		color_sphere.scale = Vector3.ONE * (color_radius * proximity_factor * breath)
+		
 	## Check if another object is picked and if it is self
 	if Manager.is_one_picked and not Manager.pick_obj_name.is_empty():
 		## double check picked in case, just to make sure there's no knots in code
