@@ -26,9 +26,11 @@ GlobalInteractionEvents="*uid://xca2kvqtvbts"
 ScanInteractableLayer="*uid://bcseri36yyy3n"
 Manager="*res://scripts/manager/manager.gd"
 SubtitlesScene="*uid://bciil8v6ykx2e"
+CrossfadePlayer="*uid://ly46awrd01is"
 
 [display]
 
+window/size/mode=2
 window/stretch/mode="viewport"
 
 [editor]
