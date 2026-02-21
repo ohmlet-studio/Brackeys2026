@@ -48,7 +48,7 @@ func _on_teleport():
 		SubtitlesScene.sub_load_from_file(subtitles_path)
 		SubtitlesScene.play_dialog(entering_sound)
 		is_player_never_entered = false
-		CrossfadePlayer.play(level_musics[0], 2.0)
+		CrossfadePlayer.play(level_musics[0], 1.0)
 
 func all_objects_scanned():
 	for child: Pickable in pickable_parent.get_children():
@@ -102,7 +102,7 @@ func _on_scan_ended(pickable: Pickable):
 	print("_on_scan_ended")
 	
 	number_of_object_scanned += 1
-	CrossfadePlayer.play(level_musics[number_of_object_scanned], 2.0)
+	CrossfadePlayer.play(level_musics[number_of_object_scanned], 1.0)
 	
 	if all_objects_scanned():
 		_bring_color_back()
