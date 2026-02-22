@@ -72,7 +72,7 @@ level_musics = Array[AudioStream]([ExtResource("19_ob8up"), ExtResource("20_xymt
 
 [node name="Player" parent="." unique_id=1596461741 instance=ExtResource("3_t0nsw")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.582653, 1.1589148, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7311597, 1.1589148, 0)
 SPEED = 1.0
 HEAD_BOB_AMPLITUDE = 0.007
 
