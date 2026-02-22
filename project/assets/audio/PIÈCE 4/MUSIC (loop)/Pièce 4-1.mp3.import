@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/Pièce 4-1.mp3-fdf03fb38eec38b2a68444e8d9635
 
 [params]
 
-loop=false
-loop_offset=0
+loop=true
+loop_offset=0.0
 bpm=0
 beat_count=0
 bar_beats=4
