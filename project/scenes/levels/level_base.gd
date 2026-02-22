@@ -52,6 +52,12 @@ func _ready() -> void:
 	portal_door_1.open_instant()
 	portal_door_2.open_instant()
 
+func _set_grabbables_interaction_enabled(enabled: bool) -> void:
+	for child: Pickable in pickable_parent.get_children():
+		child.color_radius = 1.0 if enabled else 0.0
+		if child.interactable_3d:
+			child.interactable_3d.can_be_interacted = enabled
+
 func _on_teleport():
 	# level finished
 	if teleports_to == next_room:
@@ -63,9 +69,13 @@ func _on_teleport():
 		
 		if not subtitles_path:
 			subtitles_path = entering_sound.resource_path.replace(".mp3", " ENG.srt")
-			
+		
+		_set_grabbables_interaction_enabled(false)
 		SubtitlesScene.sub_load_from_file(subtitles_path)
 		SubtitlesScene.play_dialog(entering_sound)
+		if SubtitlesScene:
+			await SubtitlesScene.dialog_finished
+		_set_grabbables_interaction_enabled(true)
 		
 		if level_musics.size() > 0:
 			CrossfadePlayer.play(level_musics[0], 0.0)
