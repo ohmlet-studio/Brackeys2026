@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Pièce 4-0.mp3-df17555e22d2c85dd9744c51ec8f3e
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
