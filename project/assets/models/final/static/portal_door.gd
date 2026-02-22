@@ -19,6 +19,7 @@ signal teleported_player
 		other_door = value
 		if is_node_ready():
 			_connect_portals.call_deferred(value)
+			_apply_other_state.call_deferred(is_opened)
 
 func _ready() -> void:
 	door.opened.connect(
@@ -39,6 +40,7 @@ func _ready() -> void:
 	portal.on_teleport_receive.connect(_on_portal_teleport)
 
 	_connect_portals.call_deferred(other_door)
+	_apply_other_state.call_deferred(is_opened)
 
 func _on_portal_teleport(teleportable: Node3D) -> void:
 	teleported_player.emit()
@@ -75,12 +77,23 @@ func close_instant():
 	door_lid.visible = true
 	collision_shape.disabled = false
 
+func _apply_other_state(opened: bool) -> void:
+	if not other_door:
+		return
+	if not other_door.is_node_ready():
+		await other_door.ready
+
+	if opened:
+		other_door.open_instant()
+	else:
+		other_door.close_instant()
+
 func open() -> void:
 	door.open()
-	other_door.open_instant()
+	_apply_other_state.call_deferred(true)
 	collision_shape.disabled = true
 
 func close() -> void:
 	door.close()
-	other_door.close_instant()
+	_apply_other_state.call_deferred(false)
 	collision_shape.disabled = false
