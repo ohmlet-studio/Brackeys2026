@@ -20,15 +20,16 @@
 [ext_resource type="Texture2D" uid="uid://pl5dslhwlo8k" path="res://assets/models/final/posters/pic1.JPG" id="15_l8lak"]
 [ext_resource type="PackedScene" uid="uid://4sesk86lkvrb" path="res://assets/models/final/commode/shelf.fbx" id="16_a564u"]
 [ext_resource type="PackedScene" uid="uid://crx4vavfptlnm" path="res://assets/models/final/smolthings/books.fbx" id="20_a564u"]
+[ext_resource type="Texture2D" uid="uid://bp6q74of32gcm" path="res://assets/models/final/room.fbm/vintagepapierpeint.png" id="21_1ey66"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glxvj"]
 albedo_texture = ExtResource("11_w00vy")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wrf2l"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f1gog"]
 albedo_texture = ExtResource("12_sfirk")
 
 [sub_resource type="QuadMesh" id="QuadMesh_a564u"]
-material = SubResource("StandardMaterial3D_wrf2l")
+material = SubResource("StandardMaterial3D_f1gog")
 size = Vector2(0.795, 1)
 center_offset = Vector3(0, -0.01, 0)
 
@@ -43,6 +44,10 @@ albedo_texture = ExtResource("15_l8lak")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ybcah"]
 albedo_texture = ExtResource("14_p0520")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bvvhd"]
+albedo_texture = ExtResource("21_1ey66")
+uv1_scale = Vector3(10, 10, 10)
 
 [node name="LevelEnfant" unique_id=1125609813 instance=ExtResource("1_vjdto")]
 
@@ -111,8 +116,5 @@ transform = Transform3D(-3.49691e-08, 0, 0.79999983, 0, 0.79999983, 0, -0.799999
 [node name="books" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="17" unique_id=1607287762 instance=ExtResource("20_a564u")]
 transform = Transform3D(-0.8399713, 0, -0.13018449, 0, 0.8499999, 0, 0.13018449, 0, -0.8399713, 6.2085304, 6.706524, -4.980131)
 
-[node name="Room" parent="room" parent_id_path=PackedInt32Array(952250540) index="0" unique_id=958283466]
-surface_material_override/0 = null
-surface_material_override/1 = null
-surface_material_override/2 = null
-surface_material_override/3 = null
+[node name="Room" parent="Room/Interactable/Static/room" parent_id_path=PackedInt32Array(879325613) index="0" unique_id=958283466]
+surface_material_override/1 = SubResource("StandardMaterial3D_bvvhd")
