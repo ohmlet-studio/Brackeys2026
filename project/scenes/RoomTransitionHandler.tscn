@@ -93,13 +93,11 @@ shape = SubResource("BoxShape3D_2e2dh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 0)
 next_room = NodePath("../LevelAdulte")
 
-[node name="Window C" parent="Rooms/LevelIntro/Room/Interactable/Static/Window C" parent_id_path=PackedInt32Array(1125609813, 1567670714) index="0" unique_id=1939163916]
-surface_material_override/0 = null
-
 [node name="LevelAdulte" parent="Rooms" unique_id=804273654 node_paths=PackedStringArray("next_room") instance=ExtResource("4_ehv8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16581333, 0, -0.009850562)
 next_room = NodePath("../LevelAdo")
 entering_sound = ExtResource("6_2e2dh")
+subtitles_path = "res://assets/audio/PIÈCE 1/VOICE/Voix entrée pièce 1.srt"
 
 [node name="LevelAdo" parent="Rooms" unique_id=542756532 node_paths=PackedStringArray("next_room", "teleports_to") instance=ExtResource("1_wks6e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)

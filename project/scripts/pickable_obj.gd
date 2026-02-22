@@ -79,6 +79,8 @@ func _ready() -> void:
 	interactable_3d.interacted.connect(_on_interact)
 	ScanInteractableLayer.scan_ended.connect(_on_scan_ended)
 	interactable_3d.scanned.connect(_on_scan_started)
+	if SubtitlesScene and not SubtitlesScene.dialog_finished.is_connected(_on_dialog_finished):
+		SubtitlesScene.dialog_finished.connect(_on_dialog_finished)
 	picked = false
 
 func _set_object_name(value: String) -> void:
@@ -169,6 +171,7 @@ func _show_hand_obj(pick: bool) -> void:
 func _on_scan_started() -> void:
 	scanned = true
 	has_been_scanned = true
+	is_being_scanned = true
 	
 	if scan_tween:
 		scan_tween.kill()
@@ -193,6 +196,7 @@ func _on_scan_started() -> void:
 
 func _on_scan_ended(scanned_object: Node3D) -> void:
 	if scanned_object and scanned_object.get_meta("scan_owner", null) == self:
+		is_being_scanned = false
 		if scan_tween:
 			scan_tween.kill()
 		scan_tween = create_tween()
@@ -202,6 +206,12 @@ func _on_scan_ended(scanned_object: Node3D) -> void:
 		).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
 	
 		scan_ended.emit()
+
+
+func _on_dialog_finished() -> void:
+	if not is_being_scanned:
+		return
+	ScanInteractableLayer.scan_interactable.end_scan()
 	
 
 func _process(delta: float) -> void:
