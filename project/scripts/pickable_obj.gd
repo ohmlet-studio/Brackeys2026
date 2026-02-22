@@ -142,8 +142,7 @@ func _on_interact() -> void:
 		_show_hand_obj(picked)
 
 	if picked:
-		if not Manager.is_one_picked:
-			Manager.is_one_picked = true
+		Manager.is_one_picked = true
 		Manager.pick_obj_name = object_name
 
 func _origin_obj_transparency(pick: bool) -> void:

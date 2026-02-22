@@ -20,6 +20,9 @@ class_name LevelRoom
 @export var subtitles_path: String
 @export var level_musics: Array[AudioStream]
 
+const AIDE_AUDIO_PATH := "res://assets/audio/AUTRES/Aide.mp3"
+const AIDE_SUBTITLE_PATH := "res://assets/audio/AUTRES/Aide ENG.srt"
+
 @export_category("DEBUG")
 @export var ready_direct: bool = false
 @export var no_anim_color: bool = false
@@ -61,6 +64,8 @@ func _set_grabbables_interaction_enabled(enabled: bool) -> void:
 func _on_teleport():
 	# level finished
 	if teleports_to == next_room:
+		if not Manager.is_one_picked:
+			_play_aide_dialog()
 		await get_tree().create_timer(1.0)
 		_remove_layer_recursive(self, 2) # remove all things colored
 	elif is_player_never_entered:
@@ -82,8 +87,6 @@ func _on_teleport():
 		
 		is_player_never_entered = false
 		
-		# TODO await et afficher objects to interact here
-		
 		# no object, link
 		if empty_level or ready_direct:
 			link_next_room()
@@ -93,6 +96,11 @@ func all_objects_scanned():
 		if not child.scanned:
 			return false
 	return true
+
+func _play_aide_dialog() -> void:
+	var aide_audio := load(AIDE_AUDIO_PATH) as AudioStream
+	SubtitlesScene.sub_load_from_file(AIDE_SUBTITLE_PATH)
+	SubtitlesScene.play_dialog(aide_audio)
 
 func _link_portals(other_room: LevelRoom):
 	await get_tree().process_frame
