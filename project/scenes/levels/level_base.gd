@@ -64,11 +64,11 @@ func _set_grabbables_interaction_enabled(enabled: bool) -> void:
 func _on_teleport():
 	# level finished
 	if teleports_to == next_room:
-		if not Manager.is_one_picked:
-			_play_aide_dialog()
 		await get_tree().create_timer(1.0)
 		_remove_layer_recursive(self, 2) # remove all things colored
 	elif is_player_never_entered:
+		is_player_never_entered = false
+		
 		if ready_direct:
 			set_layer_2()
 		
@@ -85,11 +85,12 @@ func _on_teleport():
 		if level_musics.size() > 0:
 			CrossfadePlayer.play(level_musics[0], 0.0)
 		
-		is_player_never_entered = false
-		
 		# no object, link
 		if empty_level or ready_direct:
 			link_next_room()
+	else:
+		if not Manager.is_one_picked:
+			_play_aide_dialog()
 
 func all_objects_scanned():
 	for child: Pickable in pickable_parent.get_children():

@@ -118,17 +118,18 @@ func _set_object_to_scan(value: PackedScene) -> void:
 	object_material = origMesh.get_active_material(0).duplicate()
 	origMesh.set_layer_mask_value(1, true)
 
-	clone_2d_view = scanned_object_instance.duplicate()
-	subviewport.add_child(clone_2d_view)
-	clone_2d_view.scale = Vector3.ONE * scale_2d_view
+	if not Engine.is_editor_hint():
+		clone_2d_view = scanned_object_instance.duplicate()
+		subviewport.add_child(clone_2d_view)
+		clone_2d_view.scale = Vector3.ONE * scale_2d_view
 
-	clone_inspect_view = scanned_object_instance.duplicate()
-	self.add_child(clone_inspect_view)
-	clone_inspect_view.scale = Vector3.ONE * inspect_scale
-	clone_inspect_view.position = Vector3.DOWN * 100
-	clone_inspect_view.rotation = default_inspect_rotation
-	clone_inspect_view.set_meta("scan_owner", self)
-	interactable_3d.target_scannable_object = clone_inspect_view
+		clone_inspect_view = scanned_object_instance.duplicate()
+		self.add_child(clone_inspect_view)
+		clone_inspect_view.scale = Vector3.ONE * inspect_scale
+		clone_inspect_view.position = Vector3.DOWN * 100
+		clone_inspect_view.rotation = default_inspect_rotation
+		clone_inspect_view.set_meta("scan_owner", self)
+		interactable_3d.target_scannable_object = clone_inspect_view
 
 func _on_interact() -> void:
 	if has_been_scanned and Manager.current_room.all_objects_scanned():
@@ -224,7 +225,10 @@ func _process(delta: float) -> void:
 		var proximity_factor = clamp(dist / 1.5, 0.0, 1.0) if not has_been_scanned else 1.0
 		var breath = sin(_breath_time * 2.0) * 0.1 + 0.9
 
-		color_sphere.scale = Vector3.ONE * (color_radius * proximity_factor * breath)
+		if dist > 10:
+			color_sphere.scale = Vector3.ZERO
+		else:
+			color_sphere.scale = Vector3.ONE * (color_radius * proximity_factor * breath)
 		
 	## Check if another object is picked and if it is self
 	if Manager.is_one_picked and not Manager.pick_obj_name.is_empty():
